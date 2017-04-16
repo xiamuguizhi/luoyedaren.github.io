@@ -1,3 +1,4 @@
+/* 部分css扣自https://biji.io/和百度谷歌 2017/4/13 六十一 */
 html{font:1em "Avenir Next",Avenir,"Helvetica Neue",Helvetica,"Lantinghei SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑", "STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;color:#222;}
 
 
@@ -13,6 +14,7 @@ a,input,button{transition:.3s ease;}
 body{
 	margin:0 auto;
 	max-width:40em;
+	background-color:#CCE8CF;
 }
 
 xmp{
@@ -35,6 +37,39 @@ header p{
 	color:#999;
 	margin:0;
 }
+.post a {
+          font-family: "微软雅黑","Open Sans","Helvetica Neue",Arial,sans-serif;
+          position: relative;
+          line-height: 36px;
+          color: #222;
+          text-decoration: none;
+        }
+
+        .post a:hover {
+          color: #222;
+        }         
+        .post a:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom:-5px;
+          left: 0;
+          background-color: #222;
+          visibility: hidden;
+          -webkit-transform: scaleX(0);
+          -o-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -o-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+        }         
+        .post a:hover:before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          -o-transform: scaleX(1);
+          transform: scaleX(1);
+        }       
 section{
 	counter-reset:article-num;
 }
@@ -125,54 +160,108 @@ html[step="article"] section{
 .text p{
 	text-indent:1em;
 }
-.text ul{
-	padding:.5em;
-}
-.text ul li{
-	padding-left:1.5em;
-	position:relative;
-}
-
-.text ol{
-	padding:.5em;
-	padding-left:40px;
-}
-.text ol li{
-
-}
-.text pre{
-	line-height:1;
-}
-.text pre code{
-	display:block;
-	overflow-x:auto;
-	padding:.5em .7em;
-	background:#23241f;color:#f8f8f2;
+.text ol,..text ul {
+	margin: 10px 0;
+	padding: 10px 40px;
+	background: #fafafa;
+	line-height: 38px;
 }
 
-.text code{
-	background: #333;
-	color: #FFF;
-	padding: .2em .3em;
-	border-radius: .3em;
-	text-shadow:0 1px 0 #000;
+.text ol li {
+	list-style-type: decimal;
+}
+
+.text ul li {
+	list-style-type: disc;
+}
+
+.text ol p,.text ul p {
+	margin: 0
+}
+
+.text pre,code {
+	font-family: "Courier New","Verdana","Trebuchet MS","Helvetica",sans-serif;
+}
+
+.text pre {
+	position: relative;
+	line-height: 2rem;
+	margin: 20px 0;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.text pre code, code {
+	display: block;
+	overflow: auto;
+	max-height: 280px;
+	font-size: .96rem;
+	padding: 1rem 2rem;
+	-webkit-overflow-scrolling: touch;
+	-overflow-scrolling: touch;
+	line-height: 2rem;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.06);
+}
+
+.text code {
+	display: inline-block;
+	margin: 0 .2rem -.4rem;
+	padding: 0 .2rem;
+	color: #222;
+	line-height: 1.6rem;
+	border-radius: 3px;
 }
 /*.article ul{padding-left:2em;list-style-type:disc;}*/
 
-.text blockquote{
-	font-size:.9em;
-	line-height:1.5;
-	background:#fbf3eb;
-	color:#a8988e;
-	margin:1em .2em;
-	padding:1.2em 1.5em;
-
-}
-.text blockquote p{
-	text-indent:0;
-	margin:0;
+.text blockquote,q {
+	quotes: none;
 }
 
+.text blockquote:before,blockquote:after,q:before,q:after {
+	content: none;
+}
+
+.text blockquote,q {
+	background: #CCE8CF;
+	margin: 20px 0;
+	padding: 2.5rem 4rem;
+	position: relative;
+	word-wrap: break-word;
+}
+
+.text blockquote:before,q:before,blockquote:after,q:after {
+	content: '“';
+	font-size: 4rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	font-family: "SimHei",sans-serif;
+}
+
+.text blockquote:after,q:after {
+	content: '”';
+	font-size: 4rem;
+	position: absolute;
+	top: initial;
+	left: initial;
+	bottom: -1rem;
+	right: 0;
+	font-family: "SimHei",sans-serif;
+}
+
+.text blockquote p,q p {
+	margin: 0!important;
+	padding: 0;
+	line-height: 1.8rem;
+	overflow: hidden;
+}
+.text hr {
+	border: 0;
+	height: 1px;
+	width: 100%;
+	background: #222;
+	margin: 0 auto;
+}
 .text ul li:after{
 	content:'';
 	position:absolute;
@@ -185,12 +274,17 @@ html[step="article"] section{
 	border-radius:9em;
 
 }
-.text a{
-	word-wrap:break-word;
-	word-break:normal;
+.text a:link{
+	color: #222;
 }
 
+.text a:visited {
+	color: #222;
+}
 
+.text a:hover {
+	color: #222;
+}
 
 .article .size{
 	display:block;
